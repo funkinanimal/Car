@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="soosh">
+  <DataContextMoniker Name="/sooshDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6206cf00-c5f8-4331-b420-7dca166848ce" absoluteBounds="0.5, 0.5, 2, 2.5401025390625">
+      <DataClassMoniker Name="/sooshDataContext/Employees" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ebfc223e-d246-4e37-a3df-2d726c408d19" absoluteBounds="0.51499999999999968, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

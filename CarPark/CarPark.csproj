@@ -98,6 +98,7 @@
     <Content Include="adddriver.aspx" />
     <Content Include="addprofile.aspx" />
     <Content Include="addvehicle.aspx" />
+    <Content Include="cash.aspx" />
     <Content Include="cost.aspx" />
     <Content Include="drivers.aspx" />
     <Content Include="packages.config" />
@@ -157,6 +158,13 @@
     </Compile>
     <Compile Include="admin.aspx.designer.cs">
       <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cash.aspx.cs">
+      <DependentUpon>cash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cash.aspx.designer.cs">
+      <DependentUpon>cash.aspx</DependentUpon>
     </Compile>
     <Compile Include="cost.aspx.cs">
       <DependentUpon>cost.aspx</DependentUpon>

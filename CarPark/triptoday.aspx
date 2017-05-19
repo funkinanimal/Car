@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="user.aspx.cs" Inherits="CarPark.user" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="triptoday.aspx.cs" Inherits="CarPark.triptoday" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link href="bootstrap.css" rel="stylesheet" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
 <body>
@@ -24,7 +24,7 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href ="cash.aspx">Касса</a></li>
+              <li><a href ="cash.aspx">Касса</a></li>
             <li><a href ="cost.aspx">Общая стоимость</a></li>
             <li><a href ="routswithouttrips.aspx">Маршруты без рейсов</a></li>
             <li><a href ="output.aspx">Выходной документ</a></li>
@@ -71,13 +71,33 @@
     <br />
 
     <form id="form1" runat="server">
-        <div class ="container">
-            <div class="jumbotron">
-              <h1>Здравствуйте!</h1>
-              <p>Вы вошли как оператор, чтобы начать работу выберите вкладку вверху страницы.</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h2>Общая стоимость билетов</h2>
+                    <p>Здесь вы можете узнать колличество свободных мест, если сегодня есть указанный рейс. Для этого выберите рейс и нажмите кнопку<strong> выполнить</strong>.</p>
+                </div>
+                <div class="col-lg-4">
+                    <h2>Выберите рейс:</h2>
+                    <asp:DropDownList CssClass="form-control" ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="ROUTE_NAME" DataValueField="ID">
+                    </asp:DropDownList>
+                    <br />
+                    <br />
+                    <asp:Button class="form-control btn btn-success" ID="Button1" runat="server" Text="Выполнить" OnClick="Button1_Click" />
+                    <br />
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:autocon %>" ProviderName="<%$ ConnectionStrings:autocon.ProviderName %>" SelectCommand="SELECT * FROM &quot;TRIPS&quot;"></asp:SqlDataSource>
+
+                </div>
+                <div class="col-lg-4">
+                    <h3>
+                        <asp:Label ID="Label1" runat="server"></asp:Label>
+                    </h3>
+                </div>
             </div>
+    
         </div>
     </form>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="bootstrap.js"></script>
 </body>

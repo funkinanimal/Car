@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="user.aspx.cs" Inherits="CarPark.user" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="timearr.aspx.cs" Inherits="CarPark.timearr" %>
 
 <!DOCTYPE html>
 
@@ -24,7 +24,6 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href ="cash.aspx">Касса</a></li>
             <li><a href ="cost.aspx">Общая стоимость</a></li>
             <li><a href ="routswithouttrips.aspx">Маршруты без рейсов</a></li>
             <li><a href ="output.aspx">Выходной документ</a></li>
@@ -71,10 +70,27 @@
     <br />
 
     <form id="form1" runat="server">
-        <div class ="container">
-            <div class="jumbotron">
-              <h1>Здравствуйте!</h1>
-              <p>Вы вошли как оператор, чтобы начать работу выберите вкладку вверху страницы.</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h2>Время прибытия</h2>
+                    <p>Здесь вы можете узнать время прибытия определенного рейса. Для этого выберите время рейса и нажмите кнопку<strong> выполнить.</strong>.</p>
+                </div>
+                <div class="col-lg-4">
+                    <h3>Выберите дату отправки:</h3>
+                    <asp:DropDownList class="form-control" ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="TRIP_DATE" DataValueField="ID" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                    </asp:DropDownList>
+                    <br />
+                    <br />
+                    <asp:Button class="form-control btn btn-success" ID="Button1" runat="server" OnClick="Button1_Click" Text="Выполнить" />
+                    <br />
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:autocon %>" ProviderName="<%$ ConnectionStrings:autocon.ProviderName %>" SelectCommand="SELECT * FROM &quot;TRIPS&quot;"></asp:SqlDataSource>
+                </div>
+                <div class="col-lg-4">
+                    <h3>
+                        <asp:Label ID="Label1" runat="server"></asp:Label>
+                    </h3>
+                </div>
             </div>
         </div>
     </form>

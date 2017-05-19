@@ -122,7 +122,9 @@
     <Content Include="routswithouttrips.aspx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="timearr.aspx" />
     <Content Include="trips.aspx" />
+    <Content Include="triptoday.aspx" />
     <Content Include="user.aspx" />
     <Content Include="vehicles.aspx" />
     <Content Include="Web.config" />
@@ -206,12 +208,26 @@
     <Compile Include="routswithouttrips.aspx.designer.cs">
       <DependentUpon>routswithouttrips.aspx</DependentUpon>
     </Compile>
+    <Compile Include="timearr.aspx.cs">
+      <DependentUpon>timearr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="timearr.aspx.designer.cs">
+      <DependentUpon>timearr.aspx</DependentUpon>
+    </Compile>
     <Compile Include="trips.aspx.cs">
       <DependentUpon>trips.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="trips.aspx.designer.cs">
       <DependentUpon>trips.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="triptoday.aspx.cs">
+      <DependentUpon>triptoday.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="triptoday.aspx.designer.cs">
+      <DependentUpon>triptoday.aspx</DependentUpon>
     </Compile>
     <Compile Include="user.aspx.cs">
       <DependentUpon>user.aspx</DependentUpon>

@@ -103,6 +103,7 @@
     <Content Include="cash.aspx" />
     <Content Include="cost.aspx" />
     <Content Include="drivers.aspx" />
+    <Content Include="output.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -129,6 +130,7 @@
     <Content Include="timearr.aspx" />
     <Content Include="trips.aspx" />
     <Content Include="triptoday.aspx" />
+    <Content Include="unaccaptable.aspx" />
     <Content Include="user.aspx" />
     <Content Include="vehicles.aspx" />
     <Content Include="Web.config" />
@@ -204,6 +206,13 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="output.aspx.cs">
+      <DependentUpon>output.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="output.aspx.designer.cs">
+      <DependentUpon>output.aspx</DependentUpon>
+    </Compile>
     <Compile Include="period.aspx.cs">
       <DependentUpon>period.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -260,6 +269,13 @@
     </Compile>
     <Compile Include="triptoday.aspx.designer.cs">
       <DependentUpon>triptoday.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="unaccaptable.aspx.cs">
+      <DependentUpon>unaccaptable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="unaccaptable.aspx.designer.cs">
+      <DependentUpon>unaccaptable.aspx</DependentUpon>
     </Compile>
     <Compile Include="user.aspx.cs">
       <DependentUpon>user.aspx</DependentUpon>

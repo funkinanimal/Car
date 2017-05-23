@@ -100,7 +100,26 @@
                     <br />
 
                 </div>
-                <div class =" col-lg-4"></div>
+                <div class =" col-lg-4">
+                    <br />
+                    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:autocon %>" ProviderName="<%$ ConnectionStrings:autocon.ProviderName %>" SelectCommand="SELECT * FROM &quot;TRIPS&quot;"></asp:SqlDataSource>
+                </div>
+            </div>
+            <div class="row">
+
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource3">
+                        <Columns>
+                            <asp:BoundField DataField="DRIVER_ID" HeaderText="DRIVER_ID" SortExpression="DRIVER_ID" />
+                            <asp:BoundField DataField="ROUTE_ID" HeaderText="ROUTE_ID" SortExpression="ROUTE_ID" />
+                            <asp:BoundField DataField="TRIP_DATE" HeaderText="TRIP_DATE" SortExpression="TRIP_DATE" />
+                            <asp:BoundField DataField="AV_SEATS" HeaderText="AV_SEATS" SortExpression="AV_SEATS" />
+                            <asp:BoundField DataField="ADULT_TICKET" HeaderText="ADULT_TICKET" SortExpression="ADULT_TICKET" />
+                            <asp:BoundField DataField="CHILD_TICKET" HeaderText="CHILD_TICKET" SortExpression="CHILD_TICKET" />
+                            <asp:BoundField DataField="ID" HeaderText="ID" ReadOnly="True" SortExpression="ID" />
+                            <asp:BoundField DataField="ROUTE_NAME" HeaderText="ROUTE_NAME" SortExpression="ROUTE_NAME" />
+                        </Columns>
+                    </asp:GridView>
+
             </div>
         </div>
     </form>

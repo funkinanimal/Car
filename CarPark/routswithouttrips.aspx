@@ -74,7 +74,21 @@
             <div class="row">
                 <div class="col-lg-4">
                     <h2>Общая стоимость билетов</h2>
-                    <p>Здесь вы можете определить маршруты, по которым нет рейсов. Для этого выберите *** и нажмите кнопку<strong> запросить.</strong>.</p>
+                    <p>
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource1">
+                            <Columns>
+                                <asp:BoundField DataField="ID" HeaderText="ID" ReadOnly="True" SortExpression="ID" />
+                                <asp:BoundField DataField="DEP_PLACE" HeaderText="DEP_PLACE" SortExpression="DEP_PLACE" />
+                                <asp:BoundField DataField="ARR_PLACE" HeaderText="ARR_PLACE" SortExpression="ARR_PLACE" />
+                                <asp:BoundField DataField="TRIP_TIME" HeaderText="TRIP_TIME" SortExpression="TRIP_TIME" />
+                                <asp:BoundField DataField="PERIOD_ID" HeaderText="PERIOD_ID" SortExpression="PERIOD_ID" />
+                            </Columns>
+                        </asp:GridView>
+                    </p>
+                    <p>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:autocon %>" ProviderName="<%$ ConnectionStrings:autocon.ProviderName %>" SelectCommand="select * from routes where id not in (select route_id from trips)"></asp:SqlDataSource>
+                    </p>
+
                 </div>
                 <div class="col-lg-4"></div>
                 <div class="col-lg-4"></div>

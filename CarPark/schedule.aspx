@@ -1,15 +1,15 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="addvehicle.aspx.cs" Inherits="CarPark.addvehicle" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="schedule.aspx.cs" Inherits="CarPark.schedule" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link href="bootstrap.css" rel="stylesheet" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
 <body>
-    
+
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -24,6 +24,7 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
+            <li><a href ="cash.aspx">Касса</a></li>
             <li><a href ="cost.aspx">Общая стоимость</a></li>
             <li><a href ="routswithouttrips.aspx">Маршруты без рейсов</a></li>
             <li><a href ="output.aspx">Выходной документ</a></li>
@@ -49,6 +50,16 @@
               </ul>
             </li>
 
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Функции<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="timearr.aspx">Время прибытия</a></li>
+                <li><a href="triptoday.aspx">Сегодняшний рейс</a></li>
+                <li><a href="schedule.aspx">Расписание водителей</a></li>
+                <li><a href="unaccaptable.aspx">Недоустимые рейсы</a></li>
+              </ul>
+            </li>
+
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="index.aspx">На страницу авторизации</a></li>
@@ -62,36 +73,23 @@
     <form id="form1" runat="server">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4"></div>
                 <div class="col-lg-4">
-                    <fieldset>
-                        <legend>Добавить автомобиль</legend>
-                        <asp:TextBox ID="TextBox1" runat="server" class="form-control" OnTextChanged="TextBox1_TextChanged" placeholder="Номер"></asp:TextBox>
-                        <br />
-                        <br />
-                        <asp:TextBox ID="TextBox2" runat="server" class="form-control" placeholder="Марка"></asp:TextBox>
-                        <br />
-                        <br />
-                        <asp:TextBox ID="TextBox3" runat="server" class="form-control" placeholder="Места"></asp:TextBox>
-                        <br />
-                        <br />
-                        <asp:Button ID="Button1" runat="server" CssClass ="btn btn-success form-control" Text="Добавить" OnClick="Button1_Click" />
-                        <br />
-                        <br />
-                        <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
-                    </fieldset>
+                    <h2>Расписание водителя</h2>
+                    <p>Здесь вы можете узнать расписание водителя. Для этого выберите водителя и нажмите кнопку<strong> выполнить.</strong>.</p>
                 </div>
                 <div class="col-lg-4">
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="V_ID" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
-                        <Columns>
-                            <asp:BoundField DataField="V_ID" HeaderText="V_ID" ReadOnly="True" SortExpression="V_ID" />
-                            <asp:BoundField DataField="PLATE" HeaderText="PLATE" SortExpression="PLATE" />
-                            <asp:BoundField DataField="MODEL" HeaderText="MODEL" SortExpression="MODEL" />
-                            <asp:BoundField DataField="SEATS" HeaderText="SEATS" SortExpression="SEATS" />
-                        </Columns>
-                    </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:autocon %>" ProviderName="<%$ ConnectionStrings:autocon.ProviderName %>" SelectCommand="SELECT * FROM &quot;VEHICLES&quot;"></asp:SqlDataSource>
+                    <asp:DropDownList CssClass="form-control" ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="LASTNAME" DataValueField="ID">
+                    </asp:DropDownList>
                     <br />
+                    <br />
+                    <asp:Button class="form-control btn btn-success" ID="Button1" runat="server" Text="Выполнить" OnClick="Button1_Click" />
+                    <br />
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:autocon %>" ProviderName="<%$ ConnectionStrings:autocon.ProviderName %>" SelectCommand="SELECT * FROM &quot;DRIVERS&quot;"></asp:SqlDataSource>
+                </div>
+                <div class="col-lg-4">
+                    <h3>
+                        <asp:Label ID="Label1" runat="server"></asp:Label>
+                    </h3>
                 </div>
             </div>
         </div>

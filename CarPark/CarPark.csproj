@@ -97,6 +97,8 @@
   <ItemGroup>
     <Content Include="adddriver.aspx" />
     <Content Include="addprofile.aspx" />
+    <Content Include="addrout.aspx" />
+    <Content Include="addtrip.aspx" />
     <Content Include="addvehicle.aspx" />
     <Content Include="cash.aspx" />
     <Content Include="cost.aspx" />
@@ -121,6 +123,7 @@
     <Content Include="profiles.aspx" />
     <Content Include="routes.aspx" />
     <Content Include="routswithouttrips.aspx" />
+    <Content Include="schedule.aspx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="timearr.aspx" />
@@ -144,6 +147,20 @@
     </Compile>
     <Compile Include="addprofile.aspx.designer.cs">
       <DependentUpon>addprofile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addrout.aspx.cs">
+      <DependentUpon>addrout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addrout.aspx.designer.cs">
+      <DependentUpon>addrout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addtrip.aspx.cs">
+      <DependentUpon>addtrip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addtrip.aspx.designer.cs">
+      <DependentUpon>addtrip.aspx</DependentUpon>
     </Compile>
     <Compile Include="addvehicle.aspx.cs">
       <DependentUpon>addvehicle.aspx</DependentUpon>
@@ -215,6 +232,13 @@
     </Compile>
     <Compile Include="routswithouttrips.aspx.designer.cs">
       <DependentUpon>routswithouttrips.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="schedule.aspx.cs">
+      <DependentUpon>schedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="schedule.aspx.designer.cs">
+      <DependentUpon>schedule.aspx</DependentUpon>
     </Compile>
     <Compile Include="timearr.aspx.cs">
       <DependentUpon>timearr.aspx</DependentUpon>

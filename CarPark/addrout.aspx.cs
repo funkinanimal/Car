@@ -8,7 +8,7 @@ using System.Data.OracleClient;
 
 namespace CarPark
 {
-    public partial class addvehicle : System.Web.UI.Page
+    public partial class addrout : System.Web.UI.Page
     {
         OracleConnection Oconnect;
         string conSt = "DATA SOURCE=localhost:1521/xe;PASSWORD=u1361;PERSIST SECURITY INFO=True;USER ID=slava";
@@ -19,35 +19,29 @@ namespace CarPark
             Oconnect.Open();
         }
 
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         protected void Button1_Click(object sender, EventArgs e)
         {
+            string dep = TextBox1.Text;
+            string arr = TextBox2.Text;
+            int time = int.Parse(TextBox3.Text.ToString());
+            int pd = int.Parse(DropDownList1.SelectedValue.ToString());
             OracleCommand cmd = new OracleCommand();
-            string plate = TextBox1.Text;
-            string model = TextBox2.Text;
-            int seats = Convert.ToInt32(TextBox3.Text);
-            if (plate != "" && model != "" && seats != 0)
+            if(dep != "" && arr != "" && time != 0)
             {
-                var sql = "INSERT INTO VEHICLES (PLATE, MODEL, SEATS) VALUES (:PLATE, :MODEL, :SEATS)";
+                var sql = "INSERT INTO ROUTES(DEP_PLACE, ARR_PLACE, TRIP_TIME, PERIOD_ID) VALUES(:DEP_PLACE, :ARR_PLACE, :TRIP_TIME, :PERIOD_ID)";
+                cmd.Parameters.Clear();
                 cmd.CommandText = sql;
                 cmd.Connection = Oconnect;
-                cmd.Parameters.Add(new OracleParameter(":PLATE", plate));
-                cmd.Parameters.Add(new OracleParameter(":MODEL", model));
-                cmd.Parameters.Add(new OracleParameter(":SEATS", seats));
+                cmd.Parameters.Add(new OracleParameter(":DEP_PLACE", dep));
+                cmd.Parameters.Add(new OracleParameter(":ARR_PLACE", arr));
+                cmd.Parameters.Add(new OracleParameter(":TRIP_TIME", time));
+                cmd.Parameters.Add(new OracleParameter(":PERIOD_ID", pd));
                 cmd.ExecuteNonQuery();
                 TextBox1.Text = "";
                 TextBox2.Text = "";
                 TextBox3.Text = "";
+                Oconnect.Close();
             }
-        }
-
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

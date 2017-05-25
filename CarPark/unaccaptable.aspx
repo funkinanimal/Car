@@ -35,7 +35,6 @@
                     <li><a href="adddriver.aspx">Водителя</a></li>
                     <li><a href="addrout.aspx">Маршрут</a></li>
                     <li><a href="addtrip.aspx">Рейс</a></li>
-                    <li><a href="addperiod.aspx">Периодичность</a></li>
                 </ul>
             </li>
 
@@ -79,11 +78,11 @@
                 </div>
                 <div class="col-lg-4">
 
-                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="LASTNAME" DataValueField="ID">
+                    <asp:DropDownList class="form-control" ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="LASTNAME" DataValueField="ID">
                     </asp:DropDownList>
                     <br />
                     <br />
-                    <asp:Button ID="Button1" runat="server" Text="Показать" OnClick="Button1_Click" />
+                    <asp:Button CssClass="form-control btn btn-success" ID="Button1" runat="server" Text="Показать" OnClick="Button1_Click" />
                     <br />
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:autocon %>" ProviderName="<%$ ConnectionStrings:autocon.ProviderName %>" SelectCommand="SELECT * FROM &quot;DRIVERS&quot;"></asp:SqlDataSource>
                     <br />

@@ -35,7 +35,6 @@
                     <li><a href="adddriver.aspx">Водителя</a></li>
                     <li><a href="addrout.aspx">Маршрут</a></li>
                     <li><a href="addtrip.aspx">Рейс</a></li>
-                    <li><a href="addperiod.aspx">Периодичность</a></li>
                 </ul>
             </li>
 
@@ -71,8 +70,20 @@
     <br />
 
     <form id="form1" runat="server">
-        <div>
-    
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <h2>Выходной документ</h2>
+                    <p>Здесь вы можете создать выходной документ, который содержит сгруппированные по водителям сведения о маршрутах в течение текущей недели. Для этого нажмите кнопку<strong> создать</strong>.</p>
+
+                    <asp:Button CssClass="form-control btn btn-success" ID="Button1" runat="server" Text="Создать" OnClick="Button1_Click" />
+                    <br />
+
+                </div>
+                <div class="col-lg-4">
+                </div>
+            </div>
         </div>
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

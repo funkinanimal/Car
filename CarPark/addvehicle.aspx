@@ -24,6 +24,7 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
+            <li><a href ="cash.aspx">Касса</a></li>
             <li><a href ="cost.aspx">Общая стоимость</a></li>
             <li><a href ="routswithouttrips.aspx">Маршруты без рейсов</a></li>
             <li><a href ="output.aspx">Выходной документ</a></li>
@@ -34,7 +35,6 @@
                     <li><a href="adddriver.aspx">Водителя</a></li>
                     <li><a href="addrout.aspx">Маршрут</a></li>
                     <li><a href="addtrip.aspx">Рейс</a></li>
-                    <li><a href="addperiod.aspx">Периодичность</a></li>
                 </ul>
             </li>
 
@@ -46,6 +46,16 @@
                 <li><a href="routes.aspx">Маршруты</a></li>
                 <li><a href="trips.aspx">Рейсы</a></li>
                 <li><a href="vehicles.aspx">Автомобили</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Функции<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="timearr.aspx">Время прибытия</a></li>
+                <li><a href="triptoday.aspx">Сегодняшний рейс</a></li>
+                <li><a href="schedule.aspx">Расписание водителей</a></li>
+                <li><a href="unaccaptable.aspx">Недоустимые рейсы</a></li>
               </ul>
             </li>
 

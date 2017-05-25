@@ -35,7 +35,6 @@
                     <li><a href="adddriver.aspx">Водителя</a></li>
                     <li><a href="addrout.aspx">Маршрут</a></li>
                     <li><a href="addtrip.aspx">Рейс</a></li>
-                    <li><a href="addperiod.aspx">Периодичность</a></li>
                 </ul>
             </li>
 

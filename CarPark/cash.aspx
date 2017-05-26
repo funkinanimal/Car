@@ -80,13 +80,11 @@
                 </div>
                 <div class="col-lg-4">
 
-                    <asp:DropDownList class="form-control" ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="ROUTE_NAME" DataValueField="ID">
+                    <asp:DropDownList class="form-control" ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="ASD" DataValueField="ID">
                     </asp:DropDownList>
 
                     <br />
-                    <asp:Button class="form-control" ID="Button1" runat="server" Text="Узнать дату" OnClick="Button1_Click" />
                     <br />
-                    <asp:TextBox class="form-control" ID="TextBox1" runat="server" ReadOnly="True"></asp:TextBox>
                     <br />
                     <asp:CheckBox ID="CheckBox1" runat="server" Text="Детский" />
                     <br />
@@ -94,7 +92,7 @@
                     <asp:Button class="form-control btn btn-success" ID="Button2" runat="server" Text="Продать" OnClick="Button2_Click" />
 
                     <br />
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:autocon %>" ProviderName="<%$ ConnectionStrings:autocon.ProviderName %>" SelectCommand="SELECT * FROM &quot;TRIPS&quot;"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:autocon %>" ProviderName="<%$ ConnectionStrings:autocon.ProviderName %>" SelectCommand="SELECT ID, (ROUTE_NAME || ' ' || to_char(TRIP_DATE, 'DD.MM.YYYY HH24:MI') ) asd  FROM TRIPS"></asp:SqlDataSource>
 
                 </div>
                 <div class="col-lg-4"></div>

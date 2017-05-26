@@ -21,15 +21,7 @@ namespace CarPark
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Object returnValue;
-            OracleCommand cmd = new OracleCommand();
-            int id = int.Parse(DropDownList1.SelectedValue);
-            var sql = "select trip_date from trips where id = " + id;
-            cmd.CommandText = sql;
-            cmd.Connection = Oconnect;
-            returnValue = cmd.ExecuteScalar();
-            string res = returnValue.ToString();
-            TextBox1.Text = res;  
+            
         }
 
         protected void Button2_Click(object sender, EventArgs e)

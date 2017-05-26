@@ -86,9 +86,9 @@
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:autocon %>" ProviderName="<%$ ConnectionStrings:autocon.ProviderName %>" SelectCommand="SELECT * FROM &quot;DRIVERS&quot;"></asp:SqlDataSource>
                 </div>
                 <div class="col-lg-4">
-                    <h3>
-                        <asp:Label ID="Label1" runat="server"></asp:Label>
-                    </h3>
+
+                    <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" ReadOnly="True" Rows="5" TextMode="MultiLine"></asp:TextBox>
+
                 </div>
             </div>
         </div>

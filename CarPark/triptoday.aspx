@@ -78,13 +78,13 @@
                 </div>
                 <div class="col-lg-4">
                     <h2>Выберите рейс:</h2>
-                    <asp:DropDownList CssClass="form-control" ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="ROUTE_NAME" DataValueField="ID">
+                    <asp:DropDownList CssClass="form-control" ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="ASD" DataValueField="ID">
                     </asp:DropDownList>
                     <br />
                     <br />
                     <asp:Button class="form-control btn btn-success" ID="Button1" runat="server" Text="Выполнить" OnClick="Button1_Click" />
                     <br />
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:autocon %>" ProviderName="<%$ ConnectionStrings:autocon.ProviderName %>" SelectCommand="SELECT * FROM &quot;TRIPS&quot;"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:autocon %>" ProviderName="<%$ ConnectionStrings:autocon.ProviderName %>" SelectCommand="SELECT ID, (ROUTE_NAME || ' ' || to_char(TRIP_DATE, 'DD.MM.YYYY HH24:MI') ) asd  FROM TRIPS"></asp:SqlDataSource>
 
                 </div>
                 <div class="col-lg-4">

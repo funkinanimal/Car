@@ -30,7 +30,7 @@ namespace CarPark
             cmd.Parameters.Add("res", OracleType.VarChar, 1000).Direction = ParameterDirection.Output;
             cmd.ExecuteNonQuery();
             string res = Convert.ToString(cmd.Parameters["res"].Value);
-            Label1.Text = res;
+            TextBox1.Text = res;
             Oconnect.Close();
         }
     }
